@@ -156,7 +156,7 @@ public class MainActivity extends Activity {
                 return new WebResourceResponse("text/html", "utf-8", connection.getResponseCode(), "OK", safeHeaders, modifiedHtmlStream);
 
             } catch (Exception e) {
-                Log.e(TAG, "Failed to strip CSP on main frame: " + e.getMessage());
+              //  Log.e(TAG, "Failed to strip CSP on main frame: " + e.getMessage());
                 // Fallback to normal loading if our proxy fails
                 return super.shouldInterceptRequest(view, request);
             }
