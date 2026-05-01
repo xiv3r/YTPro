@@ -22,7 +22,7 @@ android {
 
 dependencies {
     // Add your dependencies here
-    implementation 'androidx.webkit:webkit:1.15.0'
+    implementation 'androidx.webkit:webkit:1.12.0'
 }
 
 
