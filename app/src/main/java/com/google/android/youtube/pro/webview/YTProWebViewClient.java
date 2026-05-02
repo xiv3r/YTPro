@@ -33,6 +33,13 @@ public class YTProWebViewClient extends WebViewClient {
 	@Override
 	public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
 		String url = request.getUrl().toString();
+
+		if (url.contains("accounts.google.com") ||
+		url.contains("google.com/signin") ||
+		url.contains("google.com/oauth") ||
+		url.contains("googleapis.com/oauth")) {
+			return super.shouldInterceptRequest(view, request);
+		}
 		
 		if (request.isForMainFrame() && (url.contains("m.youtube.com") || url.contains("www.youtube.com"))) {
 			try {
