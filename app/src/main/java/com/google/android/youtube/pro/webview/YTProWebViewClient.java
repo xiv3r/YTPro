@@ -35,11 +35,16 @@ public class YTProWebViewClient extends WebViewClient {
 		String url = request.getUrl().toString();
 
 		if (url.contains("accounts.google.com") ||
-		url.contains("google.com/signin") ||
-		url.contains("google.com/oauth") ||
-		url.contains("googleapis.com/oauth")) {
-			return super.shouldInterceptRequest(view, request);
-		}
+    url.contains("myaccount.google.com") ||
+    url.contains("accounts.youtube.com") || 
+    url.contains("google.com/signin") ||
+    url.contains("google.com/oauth") ||
+    url.contains("googleapis.com/oauth") ||
+    url.contains("/signin") ||              
+    url.contains("SetSID")) {             
+        return super.shouldInterceptRequest(view, request);
+}
+
 		
 		if (request.isForMainFrame() && (url.contains("m.youtube.com") || url.contains("www.youtube.com"))) {
 			try {
